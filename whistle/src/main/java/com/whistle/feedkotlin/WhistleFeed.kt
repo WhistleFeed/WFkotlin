@@ -1,4 +1,4 @@
-package  com.example.whistle
+package  com.example.whistlefeed
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.webkit.WebView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.valueleaf.android_kotlin.WebViewClientImpl
+import com.whistle.feedkotlin.R
 
-class Whistletest @JvmOverloads constructor(
+class WhistleFeed @JvmOverloads constructor(
     context:Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

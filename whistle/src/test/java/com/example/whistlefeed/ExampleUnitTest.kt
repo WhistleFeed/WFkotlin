@@ -1,4 +1,4 @@
-package com.example.whistle
+package com.example.whistlefeed
 
 import org.junit.Test
 
