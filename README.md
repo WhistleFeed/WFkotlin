@@ -35,8 +35,8 @@ Note :- required fields from developer : publisher token and pencil size (minimu
 
 Androidmanifest.xml
 
-##Step 1 :
-#Place this permission tags inside manifest tags
+## Step 1 :
+# Place this permission tags inside manifest tags
 
                <uses-permission
 
@@ -45,16 +45,16 @@ Androidmanifest.xml
                </uses-permission>
  
 
-#Place this tags in tags inside application tags
+# Place this tags in tags inside application tags
 
     android:usesCleartextTraffic="true
                  
 
-##Step 3 :
+## Step 3 :
  
-          #Add the JitPack repository to your build file
+          # Add the JitPack repository to your build file
  
-         #Add it in your root build.gradle at the end of repositories:
+         # Add it in your root build.gradle at the end of repositories:
  
                    allprojects {
 		                   repositories {
@@ -64,25 +64,25 @@ Androidmanifest.xml
 	                      }
                         
                         
- ##Step 4:
+ ## Step 4:
  
-        #Add the dependency
+        # Add the dependency
 
          dependencies {      
    
              implementation 'com.github.WhistleFeed:WFkotlin:latest_version'
 	         }
 
-##Note: 
-   #check latest Version By using this link
+## Note: 
+   # check latest Version By using this link
 
        [Kotlin_sdk_link]https://jitpack.io/#WhistleFeed/WFkotlin
        
        
        
-##Activity.xml 
+## Activity.xml 
 
-         #Create an Xml file for the webview ui with id webview
+         # Create an Xml file for the webview ui with id webview
 
               <com.example.whistlefeed.WhistleFeed
                  android:id="@+id/whistleweb"
@@ -94,9 +94,9 @@ Androidmanifest.xml
               </com.example.whistlefeed.WhistleFeed>
 
                        
-##Activity.kt
+## Activity.kt
 
-          #Create a kotlin file attach to the xml UI 
+          # Create a kotlin file attach to the xml UI 
 
 
    val webView = findViewById<WhistleFeed>(R.id.whistleweb); // init imageSlider
@@ -104,17 +104,17 @@ Androidmanifest.xml
         publishertoken = "YOUR_PUBLISHER_TOKEN"
        );
 
-##OUTPUT
+## OUTPUT
                  
-##ONE ADD FORMAT
+## ONE ADD FORMAT
 ![1 cube adds](https://github.com/prakashvalueleaf/whistle_feed/blob/master/screenshots/whistlefeed1pencil.png)
 
-##TWO ADDS FORMAT
+## TWO ADDS FORMAT
 ![2 cube adds](https://github.com/prakashvalueleaf/whistle_feed/blob/master/screenshots/whistlefeed2pencil.png)
 
-#THREE ADS FORMAT
+## THREE ADS FORMAT
 ![3 cube adds](https://github.com/prakashvalueleaf/whistle_feed/blob/master/screenshots/whistlefeed3pencil.png)
 
-# Github repository for reference
+## Github repository for reference
 
 [github_repository](https://github.com/WhistleFeed/WFkotlin)
