@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val whistlefeed: WhistleFeed = findViewById(R.id.webadds)
-        whistlefeed.setadds("1216548416578zJwc4_127", "1")
+        whistlefeed.setadds("116378385233oOAaL_3286", "1")
     }
 }

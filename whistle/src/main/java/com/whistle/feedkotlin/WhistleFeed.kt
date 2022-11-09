@@ -30,7 +30,6 @@ class WhistleFeed @JvmOverloads constructor(
     var STAGING_URL = "http://13.232.216.75/whistle-pixel/feedAds.php?"
     var LIVE_URL = "https://pixel.whistle.mobi/feedAds.php?"
     var islivelink = true
-    var packageName = ""
     var scripttags = ""
 
     init {
@@ -40,6 +39,8 @@ class WhistleFeed @JvmOverloads constructor(
     }
     fun setadds(publishertoken : String,pencilsize : String)
     {
+       var  packageName = context.packageName
+        System.out.println("Package Name = " + packageName);
         if(islivelink)
         {
             BASE_URL=LIVE_URL
@@ -61,13 +62,12 @@ class WhistleFeed @JvmOverloads constructor(
                 Log.i("", "RESPONSE :$response")
                 try {
                     val jObject = JSONObject(response)
-                    Log.d("jsonresponse", jObject.toString())
-                    scripttags = jObject.getString("data")
-                    Log.d("scripttags", scripttags)
-                    val packageName = context.packageName
-                    System.out.println("Package Name = " + packageName);
-                    if(packageName!="")
+                    Log.d("jsonresponse", jObject.getString("status"))
+                    if(jObject.getString("status")=="Success")
                     {
+                        scripttags = jObject.getString("data")
+                        Log.d("scripttags", scripttags)
+
                         val webSettings = webView!!.settings
                         webSettings.javaScriptEnabled = true
                         val webViewClient = WebViewClientImpl(context)
@@ -75,8 +75,11 @@ class WhistleFeed @JvmOverloads constructor(
                         webView!!.loadData(
                             """$scripttags""", "text/html", "UTF-8"
                         )
+                        System.out.println("Package scripttags = " + scripttags);
+
                     }
-                    System.out.println("Package scripttags = " + scripttags);
+
+
 
                 } catch (e: JSONException) {
                     e.printStackTrace()
@@ -86,6 +89,7 @@ class WhistleFeed @JvmOverloads constructor(
         ) { error -> Log.i("", "Error :$error") }
 
         mRequestQueue!!.add<String>(mStringRequest)
+
 
     }
    }
